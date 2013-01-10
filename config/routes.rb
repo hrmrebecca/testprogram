@@ -10,6 +10,7 @@ Testprogram::Application.routes.draw do
       get :search
       post :search
     end
+	resources :addresses, only: [:new, :create]
   end
   
   #get "home/index"

@@ -10,6 +10,16 @@
   <%= @person.ID%>
 </p>
 
+<%- if @person.addresses.present? %>
+	<ol>
+		<%- @person.addresses.each do |address| %>
+			<li> 
+				<%= address.street_name %>
+			</li>
+		<%   end %>
+	</ol>
+<%  end %>
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Add address', new_person_address_path(@person) %> |
 <%= link_to 'Back', people_path %>

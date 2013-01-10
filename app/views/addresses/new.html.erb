@@ -1,0 +1,36 @@
+<p id="notice"><%=notice %></p>
+
+<h1> Let's add an address! </h1>
+
+<%= form_for [@person, @address] do |f| %>
+  <p><%= @address.errors.full_messages.to_sentence %>.</p>
+
+  <p> 
+    <%= f.label :street_name %>
+	<%= f.text_field :street_name %>
+  </p>
+<p> 
+    <%= f.label :street_name_secondary %>
+	<%= f.text_field :street_name_secondary %>
+  </p>
+<p> 
+    <%= f.label :city %>
+	<%= f.text_field :city %>
+  </p>
+<p> 
+    <%= f.label :state_abbr %>
+	<%= f.text_field :state_abbr %>
+  </p>
+<p> 
+    <%= f.label :zip %>
+	<%= f.text_field :zip %>
+  </p>
+<p> 
+    <%= f.label :zip_ext %>
+	<%= f.text_field :zip_ext %>
+  </p>
+<p> 
+	<%= f.button :submit %>
+  </p>
+  
+<% end%>
